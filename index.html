@@ -3,96 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counterfat - Teman Diet Setia Anda</title>
+    <title>Counterfat - Membangun Kesehatan, Satu Langkah Alami Sehari.</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #111111; line-height: 1.6; }
-        .wrapper { max-width: 480px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.05); min-height: 100vh; }
+        .wrapper { max-width: 480px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.05); min-height: 100vh; overflow: hidden; }
         
-        /* Hero Section */
-        .hero { text-align: center; padding: 40px 20px 20px; background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%); }
-        .hero-badge { display: inline-block; background-color: #FFD700; color: #111; font-size: 12px; font-weight: 700; padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-        .hero h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
-        .hero p { font-size: 15px; color: #555; margin-bottom: 25px; }
-        .hero-img { width: 100%; max-width: 250px; border-radius: 12px; margin-bottom: 20px; }
-        
-        /* Benefits Section */
-        .benefits { padding: 30px 20px; background-color: #111111; color: #ffffff; }
-        .benefits h2 { text-align: center; font-size: 20px; margin-bottom: 25px; color: #FFD700; }
-        .benefit-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
-        .benefit-icon { font-size: 24px; margin-right: 15px; color: #FFD700; }
-        .benefit-text h3 { font-size: 16px; font-weight: 600; margin-bottom: 3px; }
-        .benefit-text p { font-size: 13px; color: #ccc; }
+        /* Bagian Masalah (Penerapan Gambar 1/Riskesdas) */
+        .problem-section { text-align: center; padding: 50px 20px 30px; background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%); position: relative; }
+        .hero-img { width: 100%; max-width: 320px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        .problem-text { font-size: 14px; color: #555; max-width: 350px; margin: 0 auto; line-height: 1.7; }
+        .problem-text b { color: #111; }
 
-        /* Social Proof / Testimonial */
-        .social-proof { padding: 30px 20px; text-align: center; background-color: #f9f9f9; }
-        .trust-badges { font-weight: 600; color: #333; margin-bottom: 15px; font-size: 14px; }
-        .quote { font-style: italic; font-size: 14px; color: #555; position: relative; padding: 0 20px; }
-        .quote::before { content: '"'; font-size: 40px; color: #FFD700; position: absolute; left: -5px; top: -10px; opacity: 0.5; }
+        /* Bagian Pendapat Ahli (Penerapan Gambar 5/Quote) */
+        .expert-section { padding: 40px 20px; text-align: center; background-color: #111111; color: #ffffff; }
+        .expert-quote-img { width: 100%; max-width: 380px; margin: 0 auto; display: block; filter: brightness(0) invert(1); opacity: 0.9; } /* Memutihkan gambar quote untuk latar hitam */
+
+        /* Bagian Solusi Teman (Penerapan Gambar 6/Branding) */
+        .teman-section { padding: 40px 20px 20px; text-align: center; position: relative; }
+        .teman-img { width: 100%; max-width: 350px; margin-bottom: 25px; display: block; margin-left: auto; margin-right: auto; }
+        .teman-desc { font-size: 15px; color: #333; margin-bottom: 25px; max-width: 400px; margin: 0 auto; line-height: 1.7; }
+        .guarantee { display: flex; justify-content: space-around; font-size: 13px; color: #777; margin-bottom: 20px; }
+        .guarantee span::before { content: '✅ '; }
 
         /* CTA Section */
-        .cta-section { padding: 30px 20px 50px; text-align: center; }
-        .cta-section h3 { font-size: 18px; margin-bottom: 10px; }
-        .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 16px; margin-bottom: 15px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; border: 2px solid #111; }
+        .cta-section { padding: 10px 20px 50px; text-align: center; }
+        .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 17px; margin-bottom: 15px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; border: 2px solid #111; }
         .btn:active { transform: scale(0.98); }
         .btn-shopee { background-color: #111111; color: #FFD700; }
         .btn-tokopedia { background-color: #ffffff; color: #111111; }
-        .guarantee { font-size: 12px; color: #777; margin-top: 15px; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="hero">
-        <div class="hero-badge">Rahasia Diet Alami</div>
-        <h1>Mencapai Berat Badan Ideal Tanpa Harus Menyiksa Diri.</h1>
-        <p>Perkenalkan Counterfat, cuka apel murni yang diformulasikan khusus sebagai teman diet setia Anda setiap hari.</p>
-        
-        <img src="foto-produk-anda.jpg" alt="Botol Counterfat" class="hero-img">
+    <div class="problem-section">
+        <img src="hero-problem.png" alt="Tantangan Berat Badan" class="hero-img">
+        <p class="problem-text">Data menunjukkan realita yang menantang di Indonesia. Namun, perjalanan kesehatan bukanlah tentang angka semata, melainkan tentang kenyamanan diri dan kualitas hidup.</p>
     </div>
 
-    <div class="benefits">
-        <h2>Kenapa Memilih Counterfat?</h2>
-        
-        <div class="benefit-item">
-            <div class="benefit-icon">🔥</div>
-            <div class="benefit-text">
-                <h3>Bantu Bakar Lemak Alami</h3>
-                <p>Meningkatkan metabolisme tubuh agar proses pembakaran kalori lebih optimal.</p>
-            </div>
-        </div>
-        
-        <div class="benefit-item">
-            <div class="benefit-icon">🍽️</div>
-            <div class="benefit-text">
-                <h3>Kontrol Nafsu Makan</h3>
-                <p>Memberikan rasa kenyang lebih lama sehingga Anda tidak mudah tergoda ngemil.</p>
-            </div>
-        </div>
-        
-        <div class="benefit-item">
-            <div class="benefit-icon">🍏</div>
-            <div class="benefit-text">
-                <h3>Detoksifikasi Pencernaan</h3>
-                <p>Terbuat dari apel pilihan terbaik untuk menjaga kesehatan lambung dan usus.</p>
-            </div>
-        </div>
+    <div class="expert-section">
+        <img src="quote-expert.png" alt="Quote Dosen FKM UI Wahyu Kurnia" class="expert-quote-img">
     </div>
 
-    <div class="social-proof">
-        <div class="trust-badges">✅ 100% Bahan Alami | ✅ Aman Dikonsumsi | ✅ Terjual Ribuan Botol</div>
-        <p class="quote">"Semenjak rutin minum Counterfat pagi hari, diet jadi terasa lebih ringan dan pencernaan super lancar!" - Kak Sarah, Pelanggan Setia</p>
+    <div class="teman-section">
+        <img src="teman-diet.png" alt="Counterfat Teman Diet Anda" class="teman-img">
+        
+        <p class="teman-desc">Di perjalanan kesehatan Anda, setiap bantuan kecil sangat berarti. Counterfat hadir sebagai pendamping setia, diformulasikan untuk memberikan dukungan alami bagi pencernaan Anda dan membantu menjaga metabolisme tetap seimbang secara bertahap.</p>
+        
+        <div class="guarantee">
+            <span>Bahan Alami Pilihan</span>
+            <span>Aman untuk Lambung</span>
+            <span>Garansi Original</span>
+        </div>
     </div>
 
     <div class="cta-section">
-        <h3>Amankan Stok Anda Hari Ini!</h3>
-        <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Pilih marketplace favorit Anda untuk klaim promo dan gratis ongkir.</p>
+        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Mulai langkah sehat Anda dari sini.</p>
         
-        <a href="LINK_SHOPEE" class="btn btn-shopee">🛒 Beli via Shopee</a>
-        <a href="LINK_TOKOPEDIA" class="btn btn-tokopedia">🛍️ Beli via Tokopedia</a>
-        
-        <p class="guarantee">🔒 Transaksi aman & garansi produk original</p>
+        <a href="LINK_SHOPEE" class="btn btn-shopee">🛒 Beli melalui Shopee</a>
+        <a href="LINK_TOKOPEDIA" class="btn btn-tokopedia">🛍️ Beli melalui Tokopedia</a>
     </div>
 </div>
 
