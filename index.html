@@ -4,60 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counterfat - Membangun Kesehatan, Satu Langkah Alami Sehari.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #111111; line-height: 1.6; overflow-x: hidden; }
-        .wrapper { max-width: 480px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.05); min-height: 100vh; overflow: hidden; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fafafa; color: #111111; line-height: 1.6; overflow-x: hidden; }
+        .wrapper { max-width: 480px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 40px rgba(0,0,0,0.03); min-height: 100vh; overflow: hidden; position: relative; }
         
-        /* 1. Animasi Blur & Float (Untuk Teks & Tombol) */
-        .reveal-blur {
-            opacity: 0;
-            transform: translateY(30px);
-            filter: blur(8px);
-            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-blur.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0);
-        }
+        /* 1. Scroll Progress Bar (Kekinian) */
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 9999; }
+        .progress-bar { height: 4px; background: #FFD700; width: 0%; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); border-radius: 0 2px 2px 0; }
 
-        /* 2. Animasi Scale (Untuk Gambar/Foto agar terkesan mewah) */
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.92);
-            transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-scale.is-visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* 3. Efek Stagger (Beruntun) */
+        /* 2. Animasi Ultra-Smooth */
+        .reveal-blur { opacity: 0; transform: translateY(30px); filter: blur(10px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-blur.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+        .reveal-scale { opacity: 0; transform: scale(0.9); transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-scale.is-visible { opacity: 1; transform: scale(1); }
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.25s; }
         .delay-3 { transition-delay: 0.4s; }
 
-        /* Struktur Bawaan yang Sudah Dipresisikan */
-        .problem-section { text-align: center; padding: 50px 20px 30px; background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%); position: relative; }
-        .hero-img { width: 100%; max-width: 320px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-        .problem-text { font-size: 14px; color: #555; max-width: 350px; margin: 0 auto; line-height: 1.7; }
-        .expert-section { padding: 40px 20px; text-align: center; background-color: #111111; color: #ffffff; }
-        .expert-quote-img { width: 100%; max-width: 380px; margin: 0 auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(255,255,255,0.1); }
-        .teman-section { padding: 40px 20px 20px; text-align: center; position: relative; }
-        .teman-img { width: 100%; max-width: 350px; margin-bottom: 25px; display: block; margin-left: auto; margin-right: auto; }
-        .teman-desc { font-size: 15px; color: #333; margin-bottom: 25px; max-width: 400px; margin: 0 auto; line-height: 1.7; }
-        .guarantee { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; margin-bottom: 0px; font-size: 12px; color: #111; font-weight: 700; }
-        .guarantee span::before { content: '✅ '; }
-        .cta-section { padding: 0px 20px 50px; text-align: center; }
-        .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 17px; margin-bottom: 15px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; border: 2px solid #111; }
-        .btn:active { transform: scale(0.98); }
-        .btn-shopee { background-color: #111111; color: #FFD700; }
-        .btn-tokopedia { background-color: #ffffff; color: #111111; }
+        /* Struktur Konten */
+        .problem-section { text-align: center; padding: 60px 20px 30px; background: linear-gradient(180deg, #fdfdfd 0%, #ffffff 100%); }
+        .hero-img { width: 100%; max-width: 320px; border-radius: 16px; margin-bottom: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .problem-text { font-size: 14.5px; color: #555; max-width: 350px; margin: 0 auto; line-height: 1.8; font-weight: 300; letter-spacing: 0.2px; }
+        
+        .expert-section { padding: 50px 20px; text-align: center; background-color: #0a0a0a; color: #ffffff; position: relative; }
+        .expert-quote-img { width: 100%; max-width: 380px; margin: 0 auto; display: block; border-radius: 14px; box-shadow: 0 10px 30px rgba(255,215,0,0.05); }
+
+        .teman-section { padding: 50px 20px 20px; text-align: center; position: relative; }
+        .teman-img { width: 100%; max-width: 320px; margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; }
+        .teman-desc { font-size: 15px; color: #444; margin-bottom: 35px; max-width: 400px; margin: 0 auto; line-height: 1.8; font-weight: 400; }
+        
+        /* 3. Ambient Glow di Belakang Foto Produk */
+        .product-showcase { position: relative; display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px auto 40px; max-width: 400px; padding: 0 15px; }
+        .product-showcase::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, transparent 70%); z-index: 0; filter: blur(20px); }
+        .product-img-wrapper { position: relative; z-index: 1; width: 48%; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 25px rgba(0,0,0,0.12); transition: transform 0.3s ease; }
+        .product-img-wrapper img { width: 100%; display: block; }
+        
+        /* Jarak Ceklis Premium */
+        .guarantee { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-top: 20px; margin-bottom: 0px; font-size: 12.5px; color: #111; font-weight: 700; letter-spacing: 0.5px; }
+        .guarantee span { display: flex; align-items: center; }
+        .guarantee span::before { content: '✓'; display: inline-block; background: #22c55e; color: white; border-radius: 50%; width: 16px; height: 16px; text-align: center; line-height: 16px; font-size: 10px; margin-right: 6px; }
+
+        /* CTA Section Glassmorphism */
+        .cta-section { padding: 10px 20px 60px; text-align: center; }
+        .btn { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; padding: 18px; margin-bottom: 15px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; letter-spacing: 0.3px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden; z-index: 1; }
+        .btn::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent); transform: translateX(-100%); transition: 0.6s; z-index: -1; }
+        .btn:hover::before { transform: translateX(100%); }
+        .btn:active { transform: scale(0.96); }
+        
+        .btn-shopee { background-color: #111111; color: #FFD700; box-shadow: 0 8px 20px rgba(17, 17, 17, 0.2); border: 1px solid #222; }
+        .btn-tokopedia { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); color: #111111; border: 1px solid #eaeaea; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); }
     </style>
 </head>
 <body>
+
+<div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
 
 <div class="wrapper">
     <div class="problem-section">
@@ -74,9 +78,13 @@
         
         <p class="teman-desc reveal-blur delay-1">Di perjalanan kesehatan Anda, setiap bantuan kecil sangat berarti. Counterfat hadir sebagai pendamping setia, diformulasikan untuk memberikan dukungan alami bagi pencernaan Anda dan membantu menjaga metabolisme tetap seimbang secara bertahap.</p>
         
-        <div class="reveal-scale delay-2" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px auto 30px; max-width: 400px; padding: 0 20px;">
-            <img src="foto-botol.jpg" alt="Botol Counterfat Tampak Depan" style="width: 48%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
-            <img src="foto-botol2.jpg" alt="Detail Botol Counterfat" style="width: 48%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+        <div class="product-showcase reveal-scale delay-2">
+            <div class="product-img-wrapper">
+                <img src="foto-botol.jpg" alt="Botol Counterfat Tampak Depan">
+            </div>
+            <div class="product-img-wrapper">
+                <img src="foto-botol2.jpg" alt="Detail Botol Counterfat">
+            </div>
         </div>
         
         <div class="guarantee reveal-blur delay-3">
@@ -87,7 +95,7 @@
     </div>
 
     <div class="cta-section">
-        <p class="reveal-blur" style="font-size: 14px; color: #666; margin-bottom: 15px;">Mulai langkah sehat Anda dari sini.</p>
+        <p class="reveal-blur" style="font-size: 14px; color: #666; margin-bottom: 20px; font-weight: 500;">Mulai langkah sehat Anda dari sini.</p>
         
         <a href="https://shopee.co.id/CounterFat-Cuka-Apel-With-Mother-500ml-BPOM-HALAL--i.1174979902.28351847292" class="btn btn-shopee reveal-blur delay-1">🛒 Beli melalui Shopee</a>
         <a href="https://vt.tokopedia.com/t/ZS9dTF6hev3hM-6M3o7" class="btn btn-tokopedia reveal-blur delay-2">🛍️ Beli via Tokopedia & TikTok</a>
@@ -95,25 +103,27 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15 // Memicu animasi saat 15% elemen terlihat
-        };
+    // Script 1: Scroll Progress Bar Emas
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    };
 
+    // Script 2: Ultra-Smooth Intersection Observer
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Hanya animasi 1x agar tidak mengganggu performa
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Pasang sensor ke semua elemen yang butuh dianimasikan
-        const animatedElements = document.querySelectorAll('.reveal-blur, .reveal-scale');
-        animatedElements.forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal-blur, .reveal-scale').forEach(el => observer.observe(el));
     });
 </script>
 
