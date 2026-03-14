@@ -7,14 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #111111; line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #111111; line-height: 1.6; scroll-behavior: smooth; }
         .wrapper { max-width: 480px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.05); min-height: 100vh; overflow: hidden; }
         
+        /* Efek Animasi Premium (Smooth Scroll) */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Bagian Masalah (Penerapan Gambar 1/Riskesdas) */
         .problem-section { text-align: center; padding: 50px 20px 30px; background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%); position: relative; }
         .hero-img { width: 100%; max-width: 320px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
         .problem-text { font-size: 14px; color: #555; max-width: 350px; margin: 0 auto; line-height: 1.7; }
-        .problem-text b { color: #111; }
 
         /* Bagian Pendapat Ahli (Penerapan Gambar 5/Quote) */
         .expert-section { padding: 40px 20px; text-align: center; background-color: #111111; color: #ffffff; }
@@ -24,10 +34,12 @@
         .teman-section { padding: 40px 20px 20px; text-align: center; position: relative; }
         .teman-img { width: 100%; max-width: 350px; margin-bottom: 25px; display: block; margin-left: auto; margin-right: auto; }
         .teman-desc { font-size: 15px; color: #333; margin-bottom: 25px; max-width: 400px; margin: 0 auto; line-height: 1.7; }
+        
+        /* Jarak Ceklis yang Sudah Dipresisikan */
         .guarantee { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; margin-bottom: 0px; font-size: 12px; color: #111; font-weight: 700; }
         .guarantee span::before { content: '✅ '; }
 
-        /* CTA Section */
+        /* CTA Section dengan padding yang sudah dirapatkan */
         .cta-section { padding: 0px 20px 50px; text-align: center; }
         .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 17px; margin-bottom: 15px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; border: 2px solid #111; }
         .btn:active { transform: scale(0.98); }
@@ -38,39 +50,57 @@
 <body>
 
 <div class="wrapper">
-    <div class="problem-section">
+    <div class="problem-section animate-on-scroll">
         <img src="hero-problem.png" alt="Tantangan Berat Badan" class="hero-img">
         <p class="problem-text">Data menunjukkan realita yang menantang di Indonesia. Namun, perjalanan kesehatan bukanlah tentang angka semata, melainkan tentang kenyamanan diri dan kualitas hidup.</p>
     </div>
 
-    <div class="expert-section">
+    <div class="expert-section animate-on-scroll">
         <img src="quote-expert.png" alt="Quote Dosen FKM UI Wahyu Kurnia" class="expert-quote-img">
     </div>
 
     <div class="teman-section">
-        <img src="teman-diet.png" alt="Counterfat Teman Diet Anda" class="teman-img">
+        <img src="teman-diet.png" alt="Counterfat Teman Diet Anda" class="teman-img animate-on-scroll">
         
-        <p class="teman-desc">Di perjalanan kesehatan Anda, setiap bantuan kecil sangat berarti. Counterfat hadir sebagai pendamping setia, diformulasikan untuk memberikan dukungan alami bagi pencernaan Anda dan membantu menjaga metabolisme tetap seimbang secara bertahap.</p>
+        <p class="teman-desc animate-on-scroll">Di perjalanan kesehatan Anda, setiap bantuan kecil sangat berarti. Counterfat hadir sebagai pendamping setia, diformulasikan untuk memberikan dukungan alami bagi pencernaan Anda dan membantu menjaga metabolisme tetap seimbang secara bertahap.</p>
         
-        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px auto 30px; max-width: 400px; padding: 0 20px;">
+        <div class="animate-on-scroll" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px auto 30px; max-width: 400px; padding: 0 20px;">
             <img src="foto-botol.jpg" alt="Botol Counterfat Tampak Depan" style="width: 48%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
-            <img src="foto-botol3.jpg" alt="Detail Botol Counterfat" style="width: 48%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+            <img src="foto-botol2.jpg" alt="Detail Botol Counterfat" style="width: 48%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
         </div>
         
-        <div class="guarantee">
+        <div class="guarantee animate-on-scroll">
             <span>WITH MOTHER</span>
             <span>UNPASTEURIZED</span>
             <span>RAW & UNFILTERED</span>
         </div>
     </div>
 
-    <div class="cta-section">
+    <div class="cta-section animate-on-scroll">
         <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Mulai langkah sehat Anda dari sini.</p>
         
         <a href="https://shopee.co.id/CounterFat-Cuka-Apel-With-Mother-500ml-BPOM-HALAL--i.1174979902.28351847292" class="btn btn-shopee">🛒 Beli melalui Shopee</a>
         <a href="https://vt.tokopedia.com/t/ZS9dTF6hev3hM-6M3o7" class="btn btn-tokopedia">🛍️ Beli via Tokopedia & TikTok</a>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Opsional: berhenti mendeteksi setelah elemen muncul sekali
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.15 }); // Elemen muncul saat 15% bagiannya masuk layar
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
 
 </body>
 </html>
