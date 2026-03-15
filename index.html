@@ -56,7 +56,23 @@
         .btn-shopee { background-color: #111111; color: #FFD700; box-shadow: 0 8px 20px rgba(17, 17, 17, 0.2); border: 1px solid #222; }
         .btn-tokopedia { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); color: #111111; border: 1px solid #eaeaea; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); }
     </style>
-</head>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1061327628407064');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1061327628407064&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
 
 <div class="progress-container">
@@ -97,8 +113,8 @@
     <div class="cta-section">
         <p class="reveal-blur" style="font-size: 14px; color: #666; margin-bottom: 20px; font-weight: 500;">Mulai langkah sehat Anda dari sini.</p>
         
-        <a href="https://shopee.co.id/CounterFat-Cuka-Apel-With-Mother-500ml-BPOM-HALAL--i.1174979902.28351847292" class="btn btn-shopee reveal-blur delay-1">🛒 Beli melalui Shopee</a>
-        <a href="https://vt.tokopedia.com/t/ZS9dTF6hev3hM-6M3o7" class="btn btn-tokopedia reveal-blur delay-2">🛍️ Beli via Tokopedia & TikTok</a>
+        <a href="https://shopee.co.id/CounterFat-Cuka-Apel-With-Mother-500ml-BPOM-HALAL--i.1174979902.28351847292" target="_blank" class="btn btn-shopee reveal-blur delay-1" onclick="fbq('track', 'InitiateCheckout');">🛒 Beli melalui Shopee</a>
+        <a href="https://vt.tokopedia.com/t/ZS9dTF6hev3hM-6M3o7" target="_blank" class="btn btn-tokopedia reveal-blur delay-2" onclick="fbq('track', 'InitiateCheckout');">🛍️ Beli via Tokopedia & TikTok</a>
     </div>
 </div>
 
